@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home - Welcome!</title>
+  <style>
+    :root {
+      --bg-primary: #111111;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --accent-orange: #e67e22;
+      --accent-red: #e74c3c;
+      --accent-blue: #3498db;
+      --accent-green: #2ecc71;
+      --accent-purple: #9b59b6;
+      --accent-yellow: #f39c12;
+      --border-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #1a0a2e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Animated background particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0.6;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      width: 90%;
+      padding: 60px 40px;
+      background: rgba(26, 26, 26, 0.95);
+      border: 2px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .welcome-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 10px rgba(46, 204, 113, 0);
+      }
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+      animation: fadeIn 0.8s ease-in both;
+    }
+
+    .logo-image {
+      width: 120px;
+      height: auto;
+      margin: 0 auto 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.05) rotate(5deg);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-red), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease infinite;
+      background-size: 200% 200%;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+        white-space: normal;
+      }
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .message {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin: 30px 0;
+      line-height: 1.8;
+      animation: fadeIn 1s ease-in 0.3s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .highlight {
+      color: var(--accent-orange);
+      font-weight: bold;
+      display: inline-block;
+      animation: bounce 1s ease infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .tech-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+      animation: fadeIn 1s ease-in 0.6s both;
+    }
+
+    .tech-card {
+      background: var(--bg-primary);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      width: 150px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-10px) rotate(2deg);
+      border-color: var(--accent-orange);
+      box-shadow: 0 10px 30px rgba(230, 126, 34, 0.3);
+    }
+
+    .tech-card:nth-child(1):hover {
+      border-color: var(--accent-yellow);
+    }
+
+    .tech-card:nth-child(2):hover {
+      border-color: var(--accent-green);
+    }
+
+    .tech-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .tech-name {
+      font-weight: bold;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+    }
+
+    .academy-info {
+      margin: 30px 0;
+      padding: 25px;
+      background: rgba(26, 26, 26, 0.8);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      animation: fadeIn 1s ease-in 0.9s both;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent-orange);
+      transform: translateX(5px);
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.2);
+    }
+
+    .contact-item .icon {
+      font-size: 1.5rem;
+    }
+
+    .contact-item span:last-child {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    .fun-fact {
+      background: rgba(230, 126, 34, 0.1);
+      border-left: 4px solid var(--accent-orange);
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+      font-style: italic;
+      color: var(--text-secondary);
+      animation: fadeIn 1s ease-in 1.2s both;
+    }
+
+    .logout-btn {
+      background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in 1.5s both;
+    }
+
+    .logout-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
+    }
+
+    .emoji-rain {
+      position: fixed;
+      font-size: 2rem;
+      animation: fall 4s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated background particles -->
+  <div id="particles"></div>
+
+  <!-- Emoji rain -->
+  <div id="emojiRain"></div>
+
+  <div class="container">
+    <div class="welcome-badge">✓ Login Successful</div>
+    
+    <div class="logo-container">
+      <img src="Profile.png" alt="Bharath Tech Academy Logo" class="logo-image">
+    </div>
+    
+    <h1>🎉 Welcome to Bharath Tech Academy 🎉</h1>
+    
+    <div class="message">
+      Welcome to the <span class="highlight">amazing world</span> of <strong style="color: var(--accent-yellow);">JavaScript</strong> & <strong style="color: var(--accent-green);">Playwright</strong>!
+    </div>
+    
+    <div class="academy-info">
+      <div class="tagline">Let's learn together..!</div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <span>+91 - 9553 22 00 22 / 9553 220 200</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">🌐</span>
+          <span>www.BharathTechAcademy.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📺</span>
+          <span>BharathTechAcademy</span>
+        </div>
+        <div class="contact-item">
+          <span class="icon">📷</span>
+          <span>BharathTechAcademy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-cards">
+      <div class="tech-card">
+        <div class="tech-icon">📜</div>
+        <div class="tech-name">JavaScript</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🎭</div>
+        <div class="tech-name">Playwright</div>
+      </div>
+    </div>
+
+    <div class="fun-fact">
+      💡 <strong>Fun Fact:</strong> Playwright can automate Chromium, Firefox, and WebKit with a single API. 
+      Time to become an automation wizard! 🧙‍♂️
+    </div>
+
+    <button class="logout-btn" onclick="logout()">← Back to Login</button>
+  </div>
+
+  <script>
+    // Create animated particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const colors = ['#e67e22', '#e74c3c', '#3498db', '#2ecc71', '#9b59b6', '#f39c12'];
+      
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.width = Math.random() * 10 + 5 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.animationDelay = Math.random() * 3 + 's';
+        particle.style.animationDuration = Math.random() * 4 + 4 + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Create falling emojis
+    function createEmojiRain() {
+      const emojiContainer = document.getElementById('emojiRain');
+      const emojis = ['🎭', '📜', '✨', '🚀', '💻', '🎉', '⚡', '🌟'];
+      
+      setInterval(() => {
+        const emoji = document.createElement('div');
+        emoji.className = 'emoji-rain';
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + '%';
+        emoji.style.animationDuration = Math.random() * 2 + 3 + 's';
+        emojiContainer.appendChild(emoji);
+        
+        setTimeout(() => {
+          emoji.remove();
+        }, 5000);
+      }, 800);
+    }
+
+    // Logout function
+    function logout() {
+      window.location.href = 'LoginPage.html';
+    }
+
+    // Initialize animations
+    createParticles();
+    createEmojiRain();
+
+    // Welcome sound effect (optional - just a fun console message)
+    console.log('%c🎉 Welcome to JavaScript & Playwright! 🎉', 'font-size: 20px; color: #e67e22; font-weight: bold;');
+    console.log('%cYou are now ready to automate the web! 🚀', 'font-size: 14px; color: #2ecc71;');
+  </script>
+</body>
+</html>
+

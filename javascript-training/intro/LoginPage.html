@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <!---CSS PROPERTIES -START-->
+  <style>
+    :root {
+      --bg-primary: #111111;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --accent-orange: #e67e22;
+      --accent-red: #e74c3c;
+      --accent-blue: #3498db;
+      --accent-green: #2ecc71;
+      --accent-purple: #9b59b6;
+      --border-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background-color: var(--bg-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      padding: 40px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-orange);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: var(--accent-orange);
+      box-shadow: 0 0 8px rgba(230, 126, 34, 0.3);
+      background-color: var(--bg-secondary);
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button {
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+      color: var(--text-primary);
+      border: none;
+      padding: 12px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(230, 126, 34, 0.5);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(230, 126, 34, 0.3);
+    }
+
+    .success-message {
+      color: var(--accent-green);
+      font-weight: bold;
+      margin-top: 15px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      background-color: rgba(46, 204, 113, 0.1);
+      border-left: 3px solid var(--accent-green);
+    }
+
+    .success-message.error {
+      color: var(--accent-red);
+      background-color: rgba(231, 76, 60, 0.1);
+      border-left: 3px solid var(--accent-red);
+    }
+  </style>
+  <!---CSS PROPERTIES -END-->
+
+  <!---HTML CODE-START-->
+</head>
+
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" />
+    <label for="password">Password</label>
+    <input type="password" id="password" />
+    <div class="button-container">
+      <button onclick="login()">Login</button>
+    </div>
+    <p class="success-message" id="successMessage"></p>
+  </div>
+  <!---HTML CODE-END-->
+
+  <!---JAVASCRIPT CODE-START-->
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var messageElement = document.getElementById("successMessage");
+
+      if (username === "Admin" && password === "Admin") {
+        messageElement.textContent = "✓ Login successful! Redirecting...";
+        messageElement.classList.remove("error");
+        messageElement.classList.add("success");
+        // Redirect to home page after 1 second
+        setTimeout(function () {
+          window.location.href = "HomePage.html";
+        }, 1000);
+      } else {
+        messageElement.textContent = "✗ Invalid username or password";
+        messageElement.classList.add("error");
+      }
+    }
+  </script>
+
+  <!---JAVASCRIPT CODE-END-->
+
+</body>
+
+</html>
