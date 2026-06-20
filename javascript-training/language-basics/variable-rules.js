@@ -7,7 +7,7 @@
 //Rules to declare a variable while storing the data 
 
 //String data in JS
-let empName = "Bharath";
+let empName = "Chandra";
 
 //1. Variable name must not be a reserved keyword. 
 // let const = "Sarath";
