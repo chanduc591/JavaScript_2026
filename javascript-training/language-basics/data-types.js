@@ -37,6 +37,9 @@ console.log(typeof num2);
 // string => The data type that can store text, characters, words, sentences, etc. It is always enclosed within single or double quotes or backticks.
 let empName = "Bharath Reddy";
 let empRole = '"Senior" SDET';
+
+ empName = "Chandrasekhar Mitakala";
+ empRole = '"Senior" SDET';
 console.log(typeof empName);
 console.log(typeof empRole);
 
