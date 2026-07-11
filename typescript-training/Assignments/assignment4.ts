@@ -1,41 +1,50 @@
-// Storing the transactions in an array (Data Structure)
-const transactions: number[] = [50000, -2000, 3000, -15000, -200, -300, 4000, -3000];
+        // Array of transactions: positive values represent credits, negative values represent debits
+        const transactions: number[] = [50000, -2000, 3000, -15000, -200, -300, 4000, -3000];
 
-// Initializing counters and accumulators
-let creditCount: number = 0;
-let debitCount: number = 0;
-let totalCredited: number = 0;
-let totalDebited: number = 0;
-let suspiciousCount: number = 0;
+        // Variables to store the count and amount of credits and debits
+        let totalCredits: number = 0;
+        let totalDebits: number = 0;
+        let totalCreditAmount: number = 0;
+        let totalDebitAmount: number = 0;
+        let suspiciousTransactions: number = 0;
 
+        // Iterate through each transaction in the array
+        for (const amount of transactions) {
 
-// Loop through each transaction
-for (const amount of transactions) {
-    // 4. Check for suspicious transactions (exceeding +/- 10000)
-    if (amount >= 10000) {
-        console.log(`Suspicious credit Transaction with Amount: ${amount}`);
-        suspiciousCount++;
-    } else if (amount <= -10000) {
-        console.log(`Suspicious debit Transaction with Amount: ${amount}`);
-        suspiciousCount++;
-    }
+            if (amount > 0) {
+                // Credit transaction
+                totalCredits++;
+                totalCreditAmount += amount;
 
-    // 1 & 2. Categorize as Credit or Debit and calculate totals
-    if (amount > 0) {
-        creditCount++;
-        totalCredited += amount;
-    } else if (amount < 0) {
-        debitCount++;
-        totalDebited += Math.abs(amount); // Using absolute value for total debited presentation
-    }
-}
+                // Check for suspiciously large credit transaction
+                if (amount > 10000) {
+                    console.log(`Suspicious credit transaction with Amount: ${amount}`);
+                    suspiciousTransactions++;
+                }
 
-// 3. Calculate remaining balance
-const remainingBalance: number = totalCredited - totalDebited;
+            } else {
+                // Debit transaction
+                totalDebits++;
+                totalDebitAmount -= amount; // convert to positive
 
-console.log(`Total Credit Transactions: ${creditCount}`);
-console.log(`   Total Debit Transactions: ${debitCount}`);
-console.log(`Total Amount Credited: ${totalCredited}`);
-console.log(`   Total Amount Debited: ${totalDebited}`);
-console.log(`Total Amount Remaining in Account: ${remainingBalance}`);
-console.log(`Total Number of Suspicious Transactions: ${suspiciousCount}`);
+                // Check for suspiciously large debit transaction
+                if (amount < -10000) {
+                    console.log(`Suspicious debit transaction with Amount: ${amount}`);
+                    suspiciousTransactions++;
+                }
+            }
+        }
+
+        // Final balance
+        const finalBalance: number = totalCreditAmount - totalDebitAmount;
+
+        // Print summary
+        console.log("----- Transaction Summary -----");
+        console.log("Total number of credit transactions:", totalCredits);
+        console.log("Total number of debit transactions:", totalDebits);
+        console.log("Total amount credited:", totalCreditAmount);
+        console.log("Total amount debited:", totalDebitAmount);
+        console.log("Final remaining amount in the account:", finalBalance);
+        console.log("Total number of suspicious transactions:", suspiciousTransactions);
+
+        export {};

@@ -1,90 +1,81 @@
-//1. Temperature of a city in degrees Celsius: 25.5
-let temperatureCelcisus:number=25.5;
-console.log(`Temerature of a city in degrees Celsius:${temperatureCelcisus}`);
+// 1.	Temperature of a city in degrees Celsius: 25.5
+let cityTemperature: number = 25.5;
+console.log("City Temperature:", cityTemperature);
 
-//2. Whether a customer has placed an order: true or false
-let hasplaceddorder:boolean=true;
-console.log(`Whether a customer has placed an order:${hasplaceddorder}`);
+// 2.	Whether a customer has placed an order: true or false
+let hasPlacedOrder: boolean = true;
+console.log("Has Placed Order:", hasPlacedOrder);
 
-//3. Person's phone number: "123-456-7890"
-let phonenumber:string="123-456-7890";
-console.log(`Person's phone number:${phonenumber}`);
+// 3.	Person's phone number: "123-456-7890"
+let phoneNumber: string = "123-456-7890";
+console.log("Phone Number:", phoneNumber);
 
-//4. Amount of money in a customer's bank account: 1000.50
-let bankaccount: number=100.50;
-console.log(`Amount of money in a customer's bank account:${bankaccount}`);
+// 4.	Amount of money in a customer's bank account: 1000.50
+let bankAccountBalance: number = 1000.50;
+console.log("Bank Account Balance:", bankAccountBalance);
 
-//Person's email address: "john.doe@example.com"
-let emailaddress: string="john.doe@example.com";
-console.log(`Person's email address:${emailaddress}`);
+// 5.	Person's email address: "john.doe@example.com"
+let emailAddress: string = "john.doe@example.com";
+console.log("Email Address:", emailAddress);
 
-//Coordinates of a location (latitude, longitude): 37.7749, -122.4194
-let location:(string|string)= "37.7749,-122.4194";
-console.log(`Coordinates of a location (latitude, longitude):${location}`);
+// 6.	Coordinates of a location (latitude, longitude): 37.7749, -122.4194
+let coordinates: number []= [37.7749, -122.4194];
+console.log("Coordinates:" + coordinates[0] + ", " + coordinates[1]);
 
-let locationaddress:[number,number]= [37.7749,-122.4194];
-console.log(`Coordinates of a location (latitude, longitude):${locationaddress}`);
+// 7.	Person's marital status: true or false
+let isMarried: boolean = true;
+console.log("Marital Status:", isMarried);
 
-//Person's marital status: true or false
+// 8.	Person's occupation: "Software Engineer"
+let occupation: string = "Software Engineer";
+console.log("Occupation:", occupation);
 
-let maritalstatus:boolean=true;
+// 9.	Person's favourite colour: "Blue"
+let favouriteColour: string = "Blue";
+console.log("Favourite Colour:", favouriteColour);
 
-console.log(`let maritalstatus:${maritalstatus}`);
+// 10.	Current year: 2023
+let currentYear: number = 2023;
+console.log("Current Year:", currentYear);
 
-//Person's occupation: "Software Engineer"
+// 11.	Number of followers on a social media platform: 1,000,000
+let followersCount: string = "1,000,000";
+console.log("Followers Count:", followersCount);
 
-let occupation:string="software Engineer";
-console.log(`Person's occupation:${occupation}`);
+// 12.	Rating of a movie: 7.5
+let movieRating: number = 7.5;
+console.log("Movie Rating:", movieRating);
 
-//Person's favourite colour: "Blue"
+// 13.	Person's blood type: 'A'
+let bloodType: string = 'A';
+console.log("Blood Type:", bloodType);
 
-let favouritecolour:string="Blue";
-console.log(`Person's favourite colour:${favouritecolour}`);
+// 14.	Title of a book: "To Kill a Mockingbird"
+let bookTitle: string = "To Kill a Mockingbird";
+console.log("Book Title:", bookTitle);
 
-//Current year: 2023
-let currentyear:number=2023;
-console.log(`Current year:${currentyear}`);
+// 15.	Number of employees in a company: 500
+let employeeCount: number = 500;
+console.log("Employee Count:", employeeCount);
 
-//Number of followers on a social media platform: 1,000,000
-let followers:string="1,000,000";
-console.log(`Number of followers on a social media platform: ${followers}`);
+// 16.	Time of an event: 2:30 PM
+let eventTime: string = "2:30 PM";
+console.log("Event Time:", eventTime);
 
+// 17.	Name of a country: "United States"
+let countryName: string = "United States";
+console.log("Country Name:", countryName);
 
-//Rating of a movie: 7.5
-let ratingofamovie:number=7.5;
-console.log(`Number of followers on a social media platform: ${ratingofamovie}`);
-//Person's blood type: 'A'
-let bloodtype:string='A';
-console.log(`Person's blood type:${bloodtype}`);
+// 18.	Person's eye color: "Brown"
+let eyeColor: string = "Brown";
+console.log("Eye Color:", eyeColor);
 
-//Title of a book: "To Kill a Mockingbird"
-let titleofbook:string="To Kill a Mockingbird";
-console.log(`Title of a book: ${titleofbook}`);
+// 19.	Person's birthplace: "New York City"
+let birthplace: string = "New York City";
+console.log("Birthplace:", birthplace);
 
-//Number of employees in a company: 500
-let numberofanemployees:number=500;
-console.log(`Number of employees in a company: ${titleofbook}`);
+// 20.	Distance between two cities: 200.5
+let distanceBetweenCities: number = 200.5;
+console.log("Distance Between Cities:", distanceBetweenCities);
 
-//Time of an event: 2:30 PM
-
-let timeofanevent:string="2:30 PM";
-console.log(`Time of an event:${timeofanevent}`);
-
-//Person's birthplace: "New York City"
-
-let birthplace:string="New York City";
-console.log(`Person's birthplace: ${birthplace}`);
-
-//Name of a country: "United States"
-
-let country:string="United States";
-console.log(`Name of a country: ${country}`);
-
-//Person's eye color: "Brown"
-let eyecolor:string="Brown";
-console.log(`Person's eye color: ${eyecolor}`);
-
-//Distance between two cities: 200.5
-let distance:number=200.5;
-console.log(`Distance between two cities:${distance}`);
 
